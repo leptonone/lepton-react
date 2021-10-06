@@ -103,7 +103,7 @@ export default class ChangePassword extends React.Component<IProps, IState> {
                         'In future this will be improved.',
                     ) }
                     { ' ' }
-                    <a href="https://github.com/vector-im/element-web/issues/2671" target="_blank" rel="noreferrer noopener">
+                    <a href="https://github.com/cryptelic/lepton/issues/2671" target="_blank" rel="noreferrer noopener">
                         https://github.com/vector-im/element-web/issues/2671
                     </a>
                 </div>,

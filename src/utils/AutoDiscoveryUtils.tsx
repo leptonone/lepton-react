@@ -87,7 +87,7 @@ export default class AutoDiscoveryUtils {
                 {
                     a: (sub) => {
                         return <a
-                            href="https://github.com/vector-im/element-web/blob/master/docs/config.md"
+                            href="https://github.com/leptonone/lepton/blob/master/docs/config.md"
                             target="_blank"
                             rel="noreferrer noopener"
                         >{ sub }</a>;

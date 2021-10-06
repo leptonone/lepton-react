@@ -27,9 +27,9 @@ import InfoDialog from "./InfoDialog";
 import StyledRadioGroup from "../elements/StyledRadioGroup";
 import { IDialogProps } from "./IDialogProps";
 
-const existingIssuesUrl = "https://github.com/vector-im/element-web/issues" +
+const existingIssuesUrl = "https://github.com/cryptelic/lepton/issues" +
     "?q=is%3Aopen+is%3Aissue+sort%3Areactions-%2B1-desc";
-const newIssueUrl = "https://github.com/vector-im/element-web/issues/new/choose";
+const newIssueUrl = "https://github.com/cryptelic/lepton/issues/new/choose";
 
 interface IProps extends IDialogProps {}
 

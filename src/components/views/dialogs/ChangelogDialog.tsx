@@ -27,7 +27,7 @@ interface IProps {
     onFinished: (success: boolean) => void;
 }
 
-const REPOS = ['vector-im/element-web', 'matrix-org/matrix-react-sdk', 'matrix-org/matrix-js-sdk'];
+const REPOS = ['leptonone/lepton', 'leptonone/lepton-react', 'leptonone/lepton-js'];
 
 export default class ChangelogDialog extends React.Component<IProps> {
     constructor(props) {

@@ -99,19 +99,6 @@ export default class LabsUserSettingsTab extends React.Component<{}, IState> {
             <div className="mx_SettingsTab mx_LabsUserSettingsTab">
                 <div className="mx_SettingsTab_heading">{ _t("Labs") }</div>
                 <div className='mx_SettingsTab_subsectionText'>
-                    {
-                        _t('Feeling experimental? Labs are the best way to get things early, ' +
-                            'test out new features and help shape them before they actually launch. ' +
-                            '<a>Learn more</a>.', {}, {
-                            'a': (sub) => {
-                                return <a
-                                    href="https://github.com/vector-im/element-web/blob/develop/docs/labs.md"
-                                    rel='noreferrer noopener'
-                                    target='_blank'
-                                >{ sub }</a>;
-                            },
-                        })
-                    }
                 </div>
                 { betaSection }
                 { labsSection }

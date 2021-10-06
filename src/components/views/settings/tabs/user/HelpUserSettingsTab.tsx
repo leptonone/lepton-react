@@ -150,7 +150,10 @@ export default class HelpUserSettingsTab extends React.Component<IProps, IState>
                 <span className='mx_SettingsTab_subheading'>{ _t("Credits") }</span>
                 <ul>
                     <li>
-                        @allan:cryptelic.com
+                        Lepton ID: @allan:cryptelic.com
+                    </li>
+                    <li>
+                        Email: allan@cryptelic.com
                     </li>
                 </ul>
             </div>
@@ -230,72 +233,17 @@ export default class HelpUserSettingsTab extends React.Component<IProps, IState>
             updateButton = <UpdateCheckButton />;
         }
 
-        let bugReportingSection;
-        if (SdkConfig.get().bug_report_endpoint_url) {
-            bugReportingSection = (
-                <div className="mx_SettingsTab_section">
-                    <span className='mx_SettingsTab_subheading'>{ _t('Bug reporting') }</span>
-                    <div className='mx_SettingsTab_subsectionText'>
-                        { _t(
-                            "If you've submitted a bug via GitHub, debug logs can help " +
-                            "us track down the problem. Debug logs contain application " +
-                            "usage data including your username, the IDs or aliases of " +
-                            "the rooms or groups you have visited, which UI elements you " +
-                            "last interacted with, and the usernames of " +
-                            "other users. They do not contain messages.",
-                        ) }
-                        <div className='mx_HelpUserSettingsTab_debugButton'>
-                            <AccessibleButton onClick={this.onBugReport} kind='primary'>
-                                { _t("Submit debug logs") }
-                            </AccessibleButton>
-                        </div>
-                        { _t(
-                            "To report a Lepton-related security issue, please read the Lepton.one " +
-                            "<a>Security Disclosure Policy</a>.", {},
-                            {
-                                a: sub => <a href="https://lepton.one/security-disclosure-policy/"
-                                    rel="noreferrer noopener"
-                                    target="_blank"
-                                >{ sub }</a>,
-                            },
-                        ) }
-                    </div>
-                </div>
-            );
-        }
-
         const { appVersion, olmVersion } = this.getVersionInfo();
 
         return (
             <div className="mx_SettingsTab mx_HelpUserSettingsTab">
                 <div className="mx_SettingsTab_heading">{ _t("Help & About") }</div>
-                { bugReportingSection }
+                { this.renderCredits() }
                 <div className='mx_SettingsTab_section'>
-                    <span className='mx_SettingsTab_subheading'>{ _t("FAQ") }</span>
-                    <div className='mx_SettingsTab_subsectionText'>
-                        { faqText }
-                    </div>
                     <AccessibleButton kind="primary" onClick={KeyboardShortcuts.toggleDialog}>
                         { _t("Keyboard Shortcuts") }
                     </AccessibleButton>
                 </div>
-                <div className='mx_SettingsTab_section mx_HelpUserSettingsTab_versions'>
-                    <span className='mx_SettingsTab_subheading'>{ _t("Versions") }</span>
-                    <div className='mx_SettingsTab_subsectionText'>
-                        <div className="mx_HelpUserSettingsTab_copy">
-                            { appVersion }<br />
-                            { olmVersion }<br />
-                            <AccessibleTooltipButton
-                                title={_t("Copy")}
-                                onClick={this.onCopyVersionClicked}
-                                className="mx_HelpUserSettingsTab_copyButton"
-                            />
-                        </div>
-                        { updateButton }
-                    </div>
-                </div>
-                { this.renderLegal() }
-                { this.renderCredits() }
                 <div className='mx_SettingsTab_section mx_HelpUserSettingsTab_versions'>
                     <span className='mx_SettingsTab_subheading'>{ _t("Advanced") }</span>
                     <div className='mx_SettingsTab_subsectionText'>
